@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
 import {View, StyleSheet, Button, TextInput, Alert} from "react-native";
+import { THEME } from '../theme';
 
-export const AddTodo = props => {
+export const AddTodo = ({ onSubmit }) => {
   const [value, setValue] = useState("")
 
   const pressHandler = () => {
     if (value.trim()) {
-      props.onSubmit(value);
+      onSubmit(value);
       setValue("");
     } else {
       Alert.alert("Название дела не может быть пустым");
@@ -40,7 +41,7 @@ const styles = StyleSheet.create({
     width: "70%",
     padding: 10,
     borderStyle: "solid",
-    borderBottomColor: "#3949ab",
+    borderBottomColor: THEME.MAIN_COLOR,
     borderBottomWidth: 2
   }
 })
