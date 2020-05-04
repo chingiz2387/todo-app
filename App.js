@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Alert, YellowBox } from 'react-native';
+import { StyleSheet, View, Alert } from 'react-native';
 import * as Font from "expo-font";
 import { AppLoading } from "expo";
 
 import { Narbar } from "./src/Components/Narbar";
 import { MainScreen } from "./src/Screens/MainScreen";
 import { TodoScreen } from './src/Screens/TodoScreen';
-
-YellowBox.ignoreWarnings(['Remote debugger']);
 
 async function loadApplication() {
   await Font.loadAsync({
